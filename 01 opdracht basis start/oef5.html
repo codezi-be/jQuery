@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <input id="naam" />
+    <input id="mijnlist" />
+    <input id="anderelist" />
+    <input id="datum" />
+</body>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input[id$='list']").val("standaardtekst"); // we gaan de inputs halen de een id hebben die eindigd met list en de waarde standaardtekst geven
+        });
+    </script>
+</html>

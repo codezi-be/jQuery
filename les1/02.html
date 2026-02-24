@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <p class="paragraaf">
+        De standaard inhoud gedefinieerd in html zelf.
+    </p>
+
+    <a href="#"></a>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).ready(function () {
+                let oudeP = $('p.paragraaf').text();
+                console.log(oudeP);
+            });
+            // $('p.paragraaf').text("jQuery kan de inhoud aanpassen.");
+
+            $("a").attr("href", "https://www.google.be"); // we gaan met attr de href van de link veranderen
+            $("a").attr("target", "_blank"); // we gaan met attr de target van de link veranderen
+
+
+            $("a").html("Google"); // we gaan met de html tekst in de a tag plaatsen
+
+
+            // we gaan met attr de href en target van de link veranderen dit is een andere manier van schrijven (object manier)
+            $("a").attr({
+                "href": "https://www.google.be",
+                "target": "_blank",
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

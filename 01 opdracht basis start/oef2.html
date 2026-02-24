@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <button>Toggle de tekst</button>
+    <p>Deze tekst verschijnt/verdwijnt</p>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () { //we plaatsen een event listener (click) op de button
+                $("p").toggle(); // als op de button wordt geklikt wordt de .toggle op de p tag uitgevoerd
+            });
+        });
+    </script>
+</body>
+
+</html>

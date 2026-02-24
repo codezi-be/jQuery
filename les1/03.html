@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <button id="google">Go to Google</button>
+    <p></p>
+
+    <button>Don't go to google</button>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button#google").click(function () { //we maken een event listener op de button en gaan met window.location de url toevoegen
+                window.location = "https://www.google.be";
+            });
+            
+
+            $("#google").hover(function(){ // Selecteert het element met id="google"
+                $("p").text("Go to Google");  // Wanneer de muis over het element gaat
+            }, function(){  // Zet de tekst van alle <p> elementen op "Go to Google"
+                $("p").text(""); // Wanneer de muis het element verlaat Maakt de tekst van alle <p> elementen leeg
+            })
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    .blue {
+        color: #00D;
+    }
+
+    .red {
+        color: #D00;
+    }
+
+    .green {
+        color: green;
+    }
+
+    .evenp {
+        font-weight: bold;
+    }
+    </style>
+</head>
+
+<body>
+    <h1>Dit is een h1</h1>
+    <p class="evenp">Lorem ipsum stuff</p>
+    <h1 id="tweedeh1">De tweede h1</h1>
+    <p>Lorem ipsum met een lijst</p>
+    <ul id="unorderedlist">
+        <li>nr.1</li>
+        <li>nr.2</li>
+        <li>nr.3</li>
+    </ul>
+    <h1>Nog maar een h1 dan</h1>
+    <p class="evenp">Dit is de laatste lorem ipsum</p>
+
+
+    <h2 id="eersteh2">De eerste h2</h2>
+    <h2>De tweede h2</h2>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("h1").addClass("blue"); // we gaan aan alle h1's de class blue toevoegen
+        $("#tweedeh1").addClass("red"); //we gaan de tweede h1 selecteren met de id tweedeh1 en er de class red aan toevoegen
+        // $(".evenp").css("border","1px solid black"); // we gaan alle p's met de class evenp een border geven
+
+        // dit is een andere manier om de volgende css waarden toe te voegen aan alle p's met de class evenp
+        $(".evenp").css({ // we gaan de volgende css waarden toevoegen aan alle p's met de class evenp
+            "border": "1px solid black",
+            "color": "purple",
+            "border-radius": "50px",
+            "padding-left": "10px"
+        });
+        $("#unorderedlist li:last").addClass("green"); // we gaan de laatste li van de unorderedlist de class green geven
+
+        $("h2").css("font-style", "italic"); // we gaan alle h2's de font-style italic geven
+        $("#eersteh2").addClass("red"); // we gaan de eerste h2 de class red geven
+    });
+    </script>
+</body>
+
+</html>
