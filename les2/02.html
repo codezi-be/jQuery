@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Klik hier en zie wat er in de console komt</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () { // we plaatsen een event listener (click) op de button
+                console.log($(this).text()); // we loggen de tekst van de button, this is de button zelf
+            })
+        });
+    </script>
+
+</body>
+
+</html>

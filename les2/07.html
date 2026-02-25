@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hint {
+            cursor: pointer;
+        }
+
+        .tooltip {
+            margin: 8px;
+            padding: 8px;
+            border: 1px solid blue;
+            background-color: yellow;
+            position: absolute;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>jQuery tooltip</h1>
+    <label id="name">Naam : </label>
+    <input type="text" size="50" />
+    <span id="hint">help?</span>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            let $tooltip; // Globale variabele maken voor de tooltip
+
+            $("#name, #hint").on("mouseover", function showToolTip () { // we plaatsen een event listener (mouseover) op de id name en id hint
+                $("<div class='tooltip'> type je naam in. minstens 2 letters</div>").appendTo("body"); // we maken een nieuwe div met de class tooltip en we plaatsen deze in de body
+                $tooltip = $(".tooltip"); // we steken de div met de class tooltip in een Globale var
+            }).on("mousemove", function changeToolTipPosition (e) { // we plaatsen een event listener (mousemove) op de id name en id hint met de parameter e (event object)
+                let $toolTipX = e.pageX + 10 // we steken de x coordinaten van de muis in een var en de tooltip 10 pixels naar rechts zetten
+                let $toolTipY = e.pageY + 10 // we steken de y coordinaten van de muis in een var en de tooltip 10 pixels naar beneden zetten
+                $tooltip.css({ // we gaan de css van de tooltip veranderen (letop: {} gebruiken = een object)
+                    top: $toolTipY, // we gaan de top van de tooltip veranderen met de waarde van de var $toolTipY
+                    left: $toolTipX // we gaan de left van de tooltip veranderen met de waarde van de var $toolTipX
+                })
+            }).on("mouseout", function hideToolTip () { // we plaatsen een event listener (mouseout) op de id name en id hint
+                $tooltip.remove(); // we gaan de tooltip verwijderen als de muis de span met id hint verlaat
+            });
+        });
+    </script>
+
+</body>
+
+</html>

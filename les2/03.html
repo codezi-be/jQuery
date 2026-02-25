@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>knop 1</button>
+    <button>knop 2</button>
+    <button>knop 3</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let $button = $("button"); // we steken de button in een var 
+
+            $button.click(function(){ // we plaatsen een event listener (click) op de var $button
+                console.log($(this).text()); // we loggen de tekst van de button
+            })
+            $button.mouseover(function(){ // we plaatsen een event listener (mouseover) op de var $button
+                $(this).css("background-color", "red"); // we gaan de var $button de kleur rood geven
+            })
+            $button.mouseout(function(){ // we plaatsen een event listener (mouseout) op de var $button
+                $(this).css("background-color", "white"); // we gaan de var $button de kleur wit geven
+            })
+        });
+    </script>
+
+</body>
+
+</html>

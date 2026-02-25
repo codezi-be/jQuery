@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>0</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let $teller = parseInt($("button").text()); // we gaan de waarde van de button omzetten naar een integer en in de var $teller zetten
+            let $button = $("button"); // we steken de button in een var
+
+            $button.click(function () { // we plaatsen een event listener (click) op de var $button
+                $teller++; // we gaan de var $teller verhogen met 1
+                $(this).text($teller); // we gaan de tekst van de var $button veranderen naar de waarde van de var $teller
+                console.log($teller); // we gaan de waarde van de var $teller loggen
+            });
+        });
+    </script>
+
+</body>
+
+</html>

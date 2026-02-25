@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <title>sun - rain</title>
+    <link rel="stylesheet" href="sun.css">
+</head>
+
+<body>
+    <h1>Sun or Rain</h1>
+    <button>Sun</button>
+    <button>Rain</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+
+        let $link = $("link"); // we steken de link in een var
+
+        $("button").click(function(){ // we plaatsen een event listener (click) op de button en openen een functie
+            // console.log($(this).text()); // we loggen de tekst van de button (gebruiken voor controlen)
+            let $tekst = $(this).text().toLocaleLowerCase(); // we gaan de tekst van de button omzetten naar kleine letters en in de var $tekst zetten
+            $link.attr("href", $tekst + ".css"); // we gaan met attr de href van de link veranderen (css)
+        })
+    });
+    </script>
+</body>
+
+</html>

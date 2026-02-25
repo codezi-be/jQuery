@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>klik ergens op het scherm en kijk in de console voor de x en y coordinaten</p>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(document).on("click", function(e){ // we plaatsen een event listener (click) op de hele document
+                console.log("u hebt geklikt op X:" + e.pageX + " en op Y:" + e.pageY); // we loggen de x en y coordinaten van de muis als er geklikt wordt
+            })
+        });
+    </script>
+
+</body>
+
+</html>

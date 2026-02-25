@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>Click of hover</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("button") // we vragen de button op (deze manier van schrijven noemt event chaining, we hangen elk event aan elkaar)
+            .click(function(){ // we plaatsen een event listener (click) op de button
+                console.log("clicked"); // we loggen de tekst clicked bij klik op de button
+            }).hover(function(){ // we plaatsen een event listener (hover) op de button
+                console.log("hover"); // we loggen de tekst hover bij hover over de button
+            });
+        });
+    </script>
+
+</body>
+
+</html>

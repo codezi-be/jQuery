@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+        input{
+            padding: 5px;
+            margin: 10px;
+        }
+        button{
+            padding: 8px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Geef een kleur in en verander de achtergrond</h2>
+    <input type="text" id="kleurInput" placeholder="blue">
+    <button id="veranderKleur">Verander achtergrond</button>
+    <button id="resetKleur">Reset achtergrond</button>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            let $kleurInput = $("#kleurInput"); // we steken de input in een var
+            let $veranderKleur = $("#veranderKleur"); // we steken de button met id veranderKleur in een var
+            let $resetKleur = $("#resetKleur"); // we steken de button met id resetKleur in een var
+            let $body = $("body"); // we steken de body in een var
+
+            $veranderKleur.click(function () { // we plaatsen een event listener (click) op de button met id veranderKleur
+                let $ingevoerdeKleur = $kleurInput.val(); // we steken de waarde van de input in een var (.val wordt gebruikt om de waarde van de input te halen) = getter
+                $body.css("background", $ingevoerdeKleur); // we gaan de var $body de kleur geven die in de var $kleurInput staat = setter
+            });
+
+            $resetKleur.click(function () { // we plaatsen een event listener (click) op de button met id resetKleur
+                $body.css("background", "white"); // we gaan de var $body de kleur wit geven = setter
+                $kleurInput.val(""); // we gaan de var $kleurInput leeg maken (.val gaat in dit geval en lege string zetten in de input) = setter
+            });
+
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blue {
+            color: #00D;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    klik op deze div om hem blauw te maken en weg te faden
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () { 
+            let $divOpvragen = $("div"); // we maken een var en deze start voor jQuery altijd met $
+            $divOpvragen.click(function(){ // we plaatsen een event listener (click) op de var $divOpvragen
+                $divOpvragen.addClass("blue"); // we gaan de var $divOpvragen de class blue geven
+                $divOpvragen.fadeOut("slow"); // we gaan de var $divOpvragen weg faden
+            })
+        });
+    </script>
+
+</body>
+
+</html>
