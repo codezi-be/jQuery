@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mydiv {
+            Margin: 10px;
+            padding: 12px;
+            border: 2px solid #666;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mydiv">
+        Dit is mijn div.
+    </div>
+
+    <input id="hide" type="button" value="Hide" />
+    <input id="show" type="button" value="Show" />
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#show").on("click", function () { // we plaatsen een event listener (click) op de button met id show
+                $(".mydiv").show(1000); // we gaan met show het element met class mydiv tonen
+            });
+            $("#hide").on("click", function () { // we plaatsen een event listener (click) op de button met id hide
+                $(".mydiv").hide(1000); // we gaan met hide het element met class mydiv verbergen
+            });
+        });
+    </script>
+
+</body>
+
+</html>

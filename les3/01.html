@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="reloadBtn">Refresh de pagina</button>
+    <p></p>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#reloadBtn').on('click', function () { // we plaatsen een event listener (click) op de button
+                $('p').text('U hebt geklikt'); // we loggen de tekst u hebt geklikt bij klik op de button
+                window.location.href = window.location.pathname + '?t=' + Date.now(); // we refreshen de pagina en zorgen dat de url verandert
+            });
+            $(window).on('beforeunload', function () { // we plaatsen een event listener (beforeunload) op de window
+                return 'Hier moet een tekst staan, maar die wordt in moderne browsers niet meer gebruikt'; // we returnen de tekst hier moet een tekst staan
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

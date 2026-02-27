@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .kader {
+            border: 9px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form>
+        <label for="name">Naam</label> <br>
+        <input type="text" name="name"> <br>
+        <br>
+        <label for="lastName">Achternaam</label> <br>
+        <input type="text" name="lastName"> <br>
+    </form>
+
+    <div id="key"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input").on("focus", "input", function () { // we gaan op de input een event listener (focus) plaatsen
+                $(this).addClass("kader"); // we voegen de class kader toe aan de input (this)
+            });
+            $("input").blur(function () { // we gaan op de input een event listener (blur) plaatsen
+                $(this).removeClass("kader"); // we verwijderen de class kader van de input
+            });
+
+            $(document).on("keydown", function (e) { // we gaan op de hele document een event listener (keydown) plaatsen
+                switch (e.which) { // we gaan met switch de waarde van e.which gebruiken
+                    case 37: // we gaan kijken of de waarde van e.which gelijk is aan 37 (key code van pijltjestoets links)
+                        $("#key").after("<p>Key links</p>"); // we gaan een p element toevoegen met de tekst "Key links"
+                        break; // we gaan de switch statement stoppen
+                    case 38: // we gaan kijken of de waarde van e.which gelijk is aan 38 (key code van pijltjestoets boven)
+                        $("#key").after("<p>Key boven</p>"); // we gaan een p element toevoegen met de tekst "Key boven"
+                        break; // we gaan de switch statement stoppen
+                    case 39: // we gaan kijken of de waarde van e.which gelijk is aan 39 (key code van pijltjestoets rechts)
+                        $("#key").after("<p>Key rechts</p>"); // we gaan een p element toevoegen met de tekst "Key rechts"
+                        break; // we gaan de switch statement stoppen
+                    case 40: // we gaan kijken of de waarde van e.which gelijk is aan 40 (key code van pijltjestoets onder)
+                        $("#key").after("<p>Key onder</p>"); // we gaan een p element toevoegen met de tekst "Key onder"
+                        break; // we gaan de switch statement stoppen
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
