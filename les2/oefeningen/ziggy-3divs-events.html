@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .omtrek {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+            width: 60px;
+        }
+
+        #groen {
+            background-color: green;
+        }
+
+        #blauw {
+            background-color: blue;
+        }
+
+        #rood {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="omtrek" id="groen">Groen</div>
+    <div class="omtrek" id="blauw">Blauw</div>
+    <div class="omtrek" id="rood">Rood</div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () { 
+            $("div").on("click", function (e){ // we plaatsen een event listener (click) op alle divs en voegen ook een event object aan de functie
+                console.log("het event type is: " + e.type); // we loggen de type van het event
+                console.log("het target is: " + e.target); // we loggen de target van het event
+                console.log("het html target is: " + e.target.innerHTML); // we loggen de html target van het event
+            })
+            .on("mouseover", function () { // we plaatsen een mouseover event listener op alle divs
+                $(this).css("width", "100px"); // de breedte van de div veranderd naar 100px enkel waar de muis hoverd
+            })
+            .on("mouseout", function () { // we plaatsen een mouseout event listener op alle divs
+                $(this).css("width", "60px"); // de breedte van de div veranderd naar 60px als de muis de div verlaat
+            });
+        });
+    </script>
+
+</body>
+
+</html>
