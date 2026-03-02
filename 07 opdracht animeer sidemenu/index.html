@@ -100,20 +100,30 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
-            $(".container").fadeIn(5000);
+            $(".container").hide().fadeIn(4000);
+
 
             $("li").on("mouseover", function () {
                 $(this).animate({ left: "+=70" }, 100);
             }).on("mouseout", function () {
                 $(this).animate({ left: "-=70" }, 100);
             }); 
+
+            $("#inhoud div").hide().eq(0).show();
             
             $("li").on("click", function (e) {
                 e.preventDefault();
                 let index = $(this).index();
-                $("#inhoud div").eq(index).slideUp(2000)
+                $("#inhoud div").eq(index).slideDown(200).siblings().slideUp(200);
+                $("a").removeClass("activated").addClass("disactivated");
+                $(this).children().removeClass("disactivated").addClass("activated");
             });
            
+           $("li a").on("mouseover", function () {
+               $(this).css("background-color", "green");
+           }).on("mouseout", function () {
+               $(this).css("background-color", "");
+           });
            
             
             
