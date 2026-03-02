@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#menu{
+        width:150px;
+        left:-180px;
+        position: absolute;
+        z-index: 100;
+      }
+      div#menu ul li{
+        margin-bottom: 1px;   
+        position: relative;
+        float : left; 
+      }
+      div#menu ul#unorderedList li a{
+          width: 150px;
+          height: 22px;
+          background-color: #00293E;
+          /* color: #ffffff; */
+          text-decoration: none;
+          display: block;
+          padding: 7px 10px 0 0;
+          text-align: right;
+          font-weight: bold;
+          cursor: pointer;
+          cursor: hand;
+      }
+ 
+      #inhoud{
+        left:50px;
+        position: absolute;
+        width:500px;
+      }
+
+      .activated{
+        color: #ff0000;
+      }
+
+      .disactivated{
+        color: #ffffff;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>jQuery rocks the menu</h1>
+
+        <div id="menu">
+            <ul id="unorderedList">
+                <li><a class="activated" href="">1</a></li>
+                <li><a class="disactivated" href="">2</a></li>
+                <li><a class="disactivated" href="">3</a></li>
+                <li><a class="disactivated" href="">4</a></li>
+                <li><a class="disactivated" href="">5</a></li>
+                <li><a class="disactivated" href="">6</a></li>
+            </ul>
+        </div>
+
+        <div id="inhoud">
+
+            <div>
+                <h2>inhoud 1</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam aliquid vitae neque recusandae mollitia unde voluptas deleniti rerum non veniam! Error officiis quidem necessitatibus, iusto non minima magni alias voluptate repellat nam quibusdam iste molestias repellendus, quasi sed, explicabo quia adipisci voluptatum? Aliquam debitis molestias accusamus, sapiente delectus alias. Veritatis qui quisquam impedit dolor dolores tempore numquam minus, debitis magnam ducimus culpa quos quas reiciendis quia similique obcaecati amet libero cum. Blanditiis consequuntur officia soluta modi quisquam dolorum dignissimos unde amet itaque tempore vel nemo provident, impedit sapiente quis, recusandae assumenda dicta excepturi, praesentium delectus ad? Mollitia molestias ducimus quasi!</p>
+            </div>
+
+            <div>
+                <h2>inhoud 2</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam aliquid vitae neque recusandae mollitia unde voluptas deleniti rerum non veniam! Error officiis quidem necessitatibus, iusto non minima magni alias voluptate repellat nam quibusdam iste molestias repellendus, quasi sed, explicabo quia adipisci voluptatum? Aliquam debitis molestias accusamus, sapiente delectus alias. Veritatis qui quisquam impedit dolor dolores tempore numquam minus, debitis magnam ducimus culpa quos quas reiciendis quia similique obcaecati amet libero cum. Blanditiis consequuntur officia soluta modi quisquam dolorum dignissimos unde amet itaque tempore vel nemo provident, impedit sapiente quis, recusandae assumenda dicta excepturi, praesentium delectus ad? Mollitia molestias ducimus quasi!</p>
+            </div>
+
+            <div>
+                <h2>inhoud 3</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam aliquid vitae neque recusandae mollitia unde voluptas deleniti rerum non veniam! Error officiis quidem necessitatibus, iusto non minima magni alias voluptate repellat nam quibusdam iste molestias repellendus, quasi sed, explicabo quia adipisci voluptatum? Aliquam debitis molestias accusamus, sapiente delectus alias. Veritatis qui quisquam impedit dolor dolores tempore numquam minus, debitis magnam ducimus culpa quos quas reiciendis quia similique obcaecati amet libero cum. Blanditiis consequuntur officia soluta modi quisquam dolorum dignissimos unde amet itaque tempore vel nemo provident, impedit sapiente quis, recusandae assumenda dicta excepturi, praesentium delectus ad? Mollitia molestias ducimus quasi!</p>
+            </div>
+
+            <div>
+                <h2>inhoud 4</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam aliquid vitae neque recusandae mollitia unde voluptas deleniti rerum non veniam! Error officiis quidem necessitatibus, iusto non minima magni alias voluptate repellat nam quibusdam iste molestias repellendus, quasi sed, explicabo quia adipisci voluptatum? Aliquam debitis molestias accusamus, sapiente delectus alias. Veritatis qui quisquam impedit dolor dolores tempore numquam minus, debitis magnam ducimus culpa quos quas reiciendis quia similique obcaecati amet libero cum. Blanditiis consequuntur officia soluta modi quisquam dolorum dignissimos unde amet itaque tempore vel nemo provident, impedit sapiente quis, recusandae assumenda dicta excepturi, praesentium delectus ad? Mollitia molestias ducimus quasi!</p>
+            </div>
+
+            <div>
+                <h2>inhoud 5</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam aliquid vitae neque recusandae mollitia unde voluptas deleniti rerum non veniam! Error officiis quidem necessitatibus, iusto non minima magni alias voluptate repellat nam quibusdam iste molestias repellendus, quasi sed, explicabo quia adipisci voluptatum? Aliquam debitis molestias accusamus, sapiente delectus alias. Veritatis qui quisquam impedit dolor dolores tempore numquam minus, debitis magnam ducimus culpa quos quas reiciendis quia similique obcaecati amet libero cum. Blanditiis consequuntur officia soluta modi quisquam dolorum dignissimos unde amet itaque tempore vel nemo provident, impedit sapiente quis, recusandae assumenda dicta excepturi, praesentium delectus ad? Mollitia molestias ducimus quasi!</p>
+            </div>
+
+            <div>
+                <h2>inhoud 6</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam aliquid vitae neque recusandae mollitia unde voluptas deleniti rerum non veniam! Error officiis quidem necessitatibus, iusto non minima magni alias voluptate repellat nam quibusdam iste molestias repellendus, quasi sed, explicabo quia adipisci voluptatum? Aliquam debitis molestias accusamus, sapiente delectus alias. Veritatis qui quisquam impedit dolor dolores tempore numquam minus, debitis magnam ducimus culpa quos quas reiciendis quia similique obcaecati amet libero cum. Blanditiis consequuntur officia soluta modi quisquam dolorum dignissimos unde amet itaque tempore vel nemo provident, impedit sapiente quis, recusandae assumenda dicta excepturi, praesentium delectus ad? Mollitia molestias ducimus quasi!</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".container").fadeIn(5000);
+
+            $("li").on("mouseover", function () {
+                $(this).animate({ left: "+=70" }, 100);
+            }).on("mouseout", function () {
+                $(this).animate({ left: "-=70" }, 100);
+            }); 
+            
+            $("li").on("click", function (e) {
+                e.preventDefault();
+                let index = $(this).index();
+                $("#inhoud div").eq(index).slideUp(2000)
+            });
+           
+           
+            
+            
+
+        });
+    </script>
+
+</body>
+</html>
