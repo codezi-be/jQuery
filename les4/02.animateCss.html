@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css "> <!-- linkt naar animate.css zonder deze werkt de animatie niet -->
     <title>Document</title>
     <style>
         #box {
@@ -34,25 +34,25 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            let $box = $("#box");
-            let $naam = $("#naam");
+        $(document).ready(function () { // wachten tot het document is geladen
+            let $box = $("#box"); // we plaasten het element met id box in een variabele $box
+            let $naam = $("#naam"); // we plaasten het element met id naam in een variabele $naam
 
-            $("#link").on("click", function (){
-                animeer($box, "animate__flash");
+            $("#link").on("click", function (){ // we plaatsen een event listener (click) op heet element met id link
+                animeer($box, "animate__flash"); // we gaan de variabele $box meegeven aan de functie animeer en geven de parameter animate__flash mee
             });
                 
-            $("#knop").on("click", function (){
-                if ($naam.val() == "") {
-                    animeer($naam, "animate__shakeX");
+            $("#knop").on("click", function (){ // we plaatsen een event listener (click) op het element met id knop
+                if ($naam.val() == "") { // als de waarde van het element met id naam leeg is
+                    animeer($naam, "animate__shakeX"); // geven we de variabele $naam mee aan de functie animeer en geven de parameter animate__shakeX mee
                 }
             })
 
-            function animeer(element, antimatie){
-                element.addClass(antimatie);
-                setTimeout(function () {
-                    element.removeClass(antimatie);
-                }, 1000);
+            function animeer(element, antimatie){ // we maken een functie met de naam animeer en geven de parameters element en antimatie
+                element.addClass(antimatie); // we gaan de variabele element de class antimatie geven
+                setTimeout(function () { // we gaan een timeout van 1 seconde geven en starten een functie
+                    element.removeClass(antimatie); // we gaan de variabele element de class antimatie verwijderen
+                }, 1000); // de snelheid van de animatie is 1 seconde
             }
         });
     </script>

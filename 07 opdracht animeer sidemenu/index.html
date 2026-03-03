@@ -99,30 +99,30 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $(".container").hide().fadeIn(4000);
+        $(document).ready(function () { // Wacht tot de volledige pagina geladen is voordat de code wordt uitgevoerd
+            $(".container").hide().fadeIn(4000); // Verberg eerst alle elementen met class "container", en laat deze zien na 4 seconden
 
 
-            $("li").on("mouseover", function () {
-                $(this).animate({ left: "+=70" }, 100);
-            }).on("mouseout", function () {
-                $(this).animate({ left: "-=70" }, 100);
+            $("li").on("mouseover", function () { // we plaatsen de mouseover event op de li elementen
+                $(this).animate({ left: "+=70" }, 100); // we gaan animate() gebruiken om de li elementen te verplaatsen naar rechts
+            }).on("mouseout", function () { // we plaatsen de mouseout event op de li elementen
+                $(this).animate({ left: "-=70" }, 100); // we gaan animate() gebruiken om de li elementen te verplaatsen naar links
             }); 
 
-            $("#inhoud div").hide().eq(0).show();
+            $("#inhoud div").hide().eq(0).show(); // Verberg alle div's binnen #inhoud Laat daarna alleen de eerste div (index 0) zien door eq(0)
             
-            $("li").on("click", function (e) {
-                e.preventDefault();
-                let index = $(this).index();
-                $("#inhoud div").eq(index).slideDown(200).siblings().slideUp(200);
-                $("a").removeClass("activated").addClass("disactivated");
-                $(this).children().removeClass("disactivated").addClass("activated");
+            $("li").on("click", function (e) { // we plaatsen een event listener (click) op de li elementen en geven een event object mee aan de functie
+                e.preventDefault(); // we gaan de standaard functie van de link stoppen
+                let index = $(this).index(); // we gaan de index van de li elementen opvragen en opslaan in de var index
+                $("#inhoud div").eq(index).slideDown(200).siblings().slideUp(200); // we gaan met eq() de index van de li elementen gebruiken om de div's te tonen en met siblings() we gaan de andere div's verbergen
+                $("a").removeClass("activated").addClass("disactivated"); // we gaan alle a elementen de class activated verwijderen en de class disactivated toevoegen
+                $(this).children().removeClass("disactivated").addClass("activated"); // we gaan de a elementen van de li elementen de class disactivated verwijderen en de class activated toevoegen
             });
            
-           $("li a").on("mouseover", function () {
-               $(this).css("background-color", "green");
-           }).on("mouseout", function () {
-               $(this).css("background-color", "");
+           $("li a").on("mouseover", function () { // we plaatsen de mouseover event op de a elementen van de li elementen
+               $(this).css("background-color", "green"); // we gaan de a elementen van de li elementen de background-color green geven
+           }).on("mouseout", function () { // we plaatsen de mouseout event op de a elementen van de li elementen
+               $(this).css("background-color", ""); // we gaan de a elementen van de li elementen de background-color leeg geven
            });
            
             

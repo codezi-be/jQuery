@@ -24,11 +24,11 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $("#animate").on('click', function () {
-                $("#content")
-                    .animate({ "height": "100px" }, 500)
-                    .animate({ "width": "250px" }, 500);
+        $(document).ready(function () { // wachten tot het document is geladen
+            $("#animate").on('click', function () { // we plaatsen een event listener (click) op het element met id animate
+                $("#content") // we gaan het element met id content oproepen in jQuery
+                    .animate({ "height": "100px" }, 500) // we gaan animate()gebruiken om de hoogte te veranderen naar 100px
+                    .animate({ "width": "250px" }, 500); // we gaan animate()gebruiken om de breedte te veranderen naar 250px
 
             });
 
