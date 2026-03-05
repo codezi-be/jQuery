@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            margin: 0 0 1em;
+            width: 125px;
+            list-style: none;
+        }
+
+        li {
+            width: 80px;
+            height: 40px;
+            background: #444;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="nostop">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="stop">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () { // wachten tot het document is geladen
+            $(".nostop li").hover( // we plaatsen een event listener (hover) op het element li in de class nostop
+                function () { // we starten een functie
+                    $(this).animate({ width: "100px" }, 500); // we gaan animate()gebruiken om de breedte te veranderen naar 100px (waar de muis op die moment over hoverd daarom de this)
+                },
+                function () { // we starten nog een functie
+                    $(this).animate({ width: "80px" }, 500); // we gaan animate()gebruiken om de breedte te veranderen naar 80px denk aan de this
+                }
+            );
+
+            $(".stop li").hover( // we plaatsen een event listener (hover) op het element li in de class stop
+                function () { // we starten een functie
+                    $(this).stop().animate({ width: "100px" }, 500); // we gaan animate()gebruiken om de breedte te veranderen naar 100px met de stop() voorkomt dat de animatie in de queue wordt geplaatst
+                },
+                function () { // we starten nog een functie
+                    $(this).stop().animate({ width: "80px" }, 500); // we gaan animate()gebruiken om de breedte te veranderen naar 80px denk aan de stop en de this en de queue
+                }
+            );
+
+
+        });
+    </script>
+
+</body>
+
+</html>

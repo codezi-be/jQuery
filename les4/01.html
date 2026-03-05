@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>
+        <input id="g1">
+        <input id="g2">
+        <button id="bereken1">Bereken</button>
+        <input id="result1">
+    </p>
+    <p>
+        <input id="g3">
+        <input id="g4">
+        <button id="bereken2">Bereken</button>
+        <input id="result2">
+    </p>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () { // wachten tot het document is geladen
+            $('#bereken1').on('click', function () { // we plaatsen een event listener (click) op de button met id bereken1
+                let result = berekenen($('#g1'), $('#g2')); // we gaan het element met id g1 en g2 meegeven aan de functie berekenen
+                $('#result1').val(result); // we gaan de input met id result1 de waarde van de var result geven
+            })
+
+            $('#bereken2').on('click', function () { // we plaatsen een event listener (click) op de button met id bereken2
+                let result = berekenen($('#g3'), $('#g4')); // we gaan het element met id g3 en g4 meegeven aan de functie berekenen
+                $('#result2').val(result); // we gaan de input met id result2 de waarde van de var result geven
+            })
+
+
+            function berekenen(inputVeld1, Inputveld2) {  // we maken een functie met de naam berekenen en geven de parameters inputVeld1 en Inputveld2
+                let berekend = parseInt(inputVeld1.val()) + parseInt(Inputveld2.val()); // we gaan de opgetelde waardes opslaan in de var berekend
+                return berekend; // we gaan de waarde van de var berekend teruggeven
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

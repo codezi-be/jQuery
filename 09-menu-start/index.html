@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Menu with jQuery</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+</head>
+
+<body>
+    <div class="container">
+        <ul id="menu">
+            <li>
+                <a href="#">
+                    <i class="icon_about"></i>
+                    <span class="title">About</span>
+                    <span class="description">Learn about us and our services</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon_work"></i>
+                    <span class="title">Work</span>
+                    <span class="description">See our work and portfolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon_help"></i>
+                    <span class="title">Help</span>
+                    <span class="description">Talk to our support</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="icon_search"></i>
+                    <span class="title">Search</span>
+                    <span class="description">Search our website</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () { // wachten tot het document is geladen
+            $("li").hover(function () { // we plaatsen een event listener (hover) op het element li
+                    animeren($(this).children("a"),{ bottom: "-10px" }, 500); // we gaan de functie animeren gebruiken en geven de parameters $(this).children("a"),{ bottom: "-10px" }, 500 mee
+                    animeren($(this).children("a").children("i"), { top: "-5px" }, 1000); // we gaan de functie animeren gebruiken en geven de parameters $(this).children("a").children("i"), { top: "-5px" }, 1000
+                },
+                function () { // we starten nog een functie
+                    animeren($(this).children("a"), { bottom: "-95px" }, 500); // we gaan de functie animeren gebruiken en geven de parameters $(this).children("a"), { bottom: "-95px" }, 500
+                    animeren($(this).children("a").children("i"), { top: "50px" }, 1000); // we gaan de functie animeren gebruiken en geven de parameters $(this).children("a").children("i"), { top: "50px" }, 1000
+                });
+
+            function animeren(selectie, propertyWaarde, speed) { // we maken een functie met de naam animeren en geven de parameters selectie, propertyWaarde en speed
+                selectie.stop().animate(propertyWaarde, speed); // we gaan de stop() gebruiken om de animatie in de queue te voorkomen en geven de parameters propertyWaarde en speed aan de animate() en word toegepast op de selectie
+            }
+        });
+    </script>
+</body>
+
+</html>
