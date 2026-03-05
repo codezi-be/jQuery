@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>eindopdracht jquery</title>
+    <style>
+        .myToolTip {
+            margin: 8px;
+            padding: 8px;
+            color: white;
+            border: 1px solid black;
+            background-color: #198754;
+            border-radius: 20px;
+            position: absolute;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <h1>Wat is jou sterrenbeeld</h1>
+
+            <div>
+                <h3>geef de dag en maand van jouw geboortedatum</h3>
+
+                <label for="dag">Geboortedag</label>
+                <input type="text" id="dag" name="dag">
+                <br><br>
+                <label for="maand">Geboortemaand</label>
+                <input type="text" id="maand" name="maand">
+                <br><br>
+                <input id="btn" type="button" value="ondek je sterrenbeeld">
+            </div>
+
+
+            <div class="mt-5">
+                <h3>jouw sterrenbeeld is:</h3>
+                <div class="bg-success fs-3 mt-5 text-center" style="width: 34%;">
+                    <p id="sterrenbeeld"></p>
+                </div>
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let $geboortedag = $("#dag");
+            let $geboortemaand = $("#maand");
+
+            let $geboortedagInt;
+            let $geboortemaandInt;
+
+            let $myToolTip;
+
+            let $dagOk = false;
+            let $maandOk = false;
+
+            console.log($geboortedag);
+            console.log($geboortemaand);
+
+            $geboortedag.val("04");
+            $geboortemaand.val("04");
+
+            $geboortedag.on("focus", function () {
+                $geboortedag.val("");
+            });
+            $geboortemaand.on("focus", function () {
+                $geboortemaand.val("");
+            });
+
+            $geboortedag.on("blur", function () {
+                if ($geboortedag.val() >= 1 && $geboortedag.val() <= 31) {
+                    $dagOk = true;
+                } else {
+                    $geboortedag.val("05");
+                    $dagOk = false;
+                }
+            });
+            $geboortemaand.on("blur", function () {
+                if ($geboortemaand.val() >= 1 && $geboortemaand.val() <= 12) {
+                    $maandOk = true;
+                } else {
+                    $geboortemaand.val("05");
+                    $maandOk = false;
+                }
+            });
+
+            $("#dag, #maand").on("mouseover", function showToolTip() {
+                $("<div class='myToolTip'> geef de dag en maand van jouw geboortedatum</div>").appendTo("body");
+                $myToolTip = $(".myToolTip");
+            }).on("mousemove", function changeToolTipPosition(e) {
+                let $toolTipX = e.pageX + 10
+                let $toolTipY = e.pageY + 10
+                $myToolTip.css({
+                    top: $toolTipY,
+                    left: $toolTipX
+                })
+            }).on("mouseout", function removeToolTip() {
+                $myToolTip.remove();
+            });
+
+            $("#btn").on("click", function () {
+                $geboortedagInt = parseInt($geboortedag.val());
+                $geboortemaandInt = parseInt($geboortemaand.val());
+                let sterrenbeeld;
+                if ($dagOk == true && $maandOk == true) {
+                    if ($geboortedagInt >= 21 && $geboortemaandInt == 12 || $geboortedagInt <= 19 && $geboortemaandInt == 1) {
+                        sterrenbeeld = "Steenbok";
+                    } else if ($geboortedagInt >= 20 && $geboortemaandInt == 1 || $geboortedagInt <= 19 && $geboortemaandInt == 2) {
+                        sterrenbeeld = "Waterman";
+                    } else if ($geboortedagInt >= 19 && $geboortemaandInt == 2 || $geboortedagInt <= 20 && $geboortemaandInt == 3) {
+                        sterrenbeeld = "Vissen";
+                    } else if ($geboortedagInt >= 21 && $geboortemaandInt == 3 || $geboortedagInt <= 20 && $geboortemaandInt == 4) {
+                        sterrenbeeld = "Ram";
+                    } else if ($geboortedagInt >= 21 && $geboortemaandInt == 4 || $geboortedagInt <= 21 && $geboortemaandInt == 5) {
+                        sterrenbeeld = "Stier";
+                    } else if ($geboortedagInt >= 21 && $geboortemaandInt == 5 || $geboortedagInt <= 21 && $geboortemaandInt == 6) {
+                        sterrenbeeld = "Tweelingen";
+                    } else if ($geboortedagInt >= 22 && $geboortemaandInt == 6 || $geboortedagInt <= 22 && $geboortemaandInt == 7) {
+                        sterrenbeeld = "Kreeft";
+                    } else if ($geboortedagInt >= 23 && $geboortemaandInt == 7 || $geboortedagInt <= 22 && $geboortemaandInt == 8) {
+                        sterrenbeeld = "Leeuw";
+                    } else if ($geboortedagInt >= 23 && $geboortemaandInt == 8 || $geboortedagInt <= 22 && $geboortemaandInt == 9) {
+                        sterrenbeeld = "Maagd";
+                    } else if ($geboortedagInt >= 23 && $geboortemaandInt == 9 || $geboortedagInt <= 22 && $geboortemaandInt == 10) {
+                        sterrenbeeld = "Weegschaal";
+                    } else if ($geboortedagInt >= 23 && $geboortemaandInt == 10 || $geboortedagInt <= 22 && $geboortemaandInt == 11) {
+                        sterrenbeeld = "Schorpioen";
+                    } else if ($geboortedagInt >= 23 && $geboortemaandInt == 11 || $geboortedagInt <= 20 && $geboortemaandInt == 12) {
+                        sterrenbeeld = "Boogschutter";
+                    }
+                } else {
+                    sterrenbeeld = "";
+                }
+                $("#sterrenbeeld").text(sterrenbeeld);
+                $("img").attr("src", "img/" + sterrenbeeld + ".jpg");
+                console.log(sterrenbeeld);
+                console.log($dagOk);
+                console.log($maandOk);
+            })
+
+        });
+    </script>
+
+</body>
+
+</html>
